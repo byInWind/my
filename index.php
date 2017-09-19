@@ -24,7 +24,7 @@
   if(array_key_exists('PATH_INFO',$_SERVER)){
     // 路径存在
     // 请求路径
-    $path = $_SERVER['PATH_INFO'];// /main/index
+    $path = $_SERVER['PATH_INFO'];//$_SERVER['PATH_INFO']记录路径 /main/index
     // 截取字符串
     $str = substr($path, 1); // main/index
     // 分割字符串
