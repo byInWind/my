@@ -1,4 +1,4 @@
-define(['jquery', 'template'], function ($, template) {
+define(['jquery', 'template','bootstrap'], function ($, template) {
   //讲师列表
   $.ajax({
     url: '/api/teacher',
@@ -22,7 +22,7 @@ define(['jquery', 'template'], function ($, template) {
             if (data.code == 200) {
               //console.log(this)  这里this不是$('.control')，所有上面用that
               $(that).attr('data-status', data.result.tc_status);
-              if (data.result.tc_status == 0) {
+              if (data.result.tc_status == 1) {
                 $(that).text("启用")
               } else {
                 $(that).text("注销")
@@ -33,19 +33,22 @@ define(['jquery', 'template'], function ($, template) {
       });
 
       //查 看
-      //$('.look').click(function () {
-      //  var dataId = $(this).parent('td').attr('data-id');
-      //  var that = this;
-      //  $.ajax({
-      //    url: '/api/teacher/view',
-      //    type: 'get',
-      //    dataType: 'json',
-      //    data: {tc_id: dataId},
-      //    success: function (data) {
-      //      console.log(data)
-      //    }
-      //  });
-      //});
+      $('.checklook').click(function () {
+        var dataId = $(this).parent('td').attr('data-id');
+       // console.log(dataId)
+        $.ajax({
+          url: '/api/teacher/view',
+          type: 'get',
+          dataType: 'json',
+          data: {tc_id: dataId},
+          success: function (data) {
+            var html=template('teacherModalTpl',data.result);
+            $('#modalTpl').html(html);
+            //console.log(html)
+           // $("#teacherModal").modal()
+          }
+        });
+      });
     }
   });
 });
