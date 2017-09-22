@@ -5,10 +5,12 @@ require.config({
     cookie: 'jquery-cookie/jquery.cookie',
     template: 'artTemplate/template-web',
     bootstrap: 'bootstrap/js/bootstrap.min',
-    util: '../js/util',
     datepicker : 'bootstrap-datepicker/js/bootstrap-datepicker',
     language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
-    teacheradd: '../js/teacheradd',
+    validate :'validate/jquery-validate.min',
+    form : 'jquery-form/jquery.form',
+    util: '../js/util',
+    teacheradd: '../js/teacher-add',
     common: '../js/common',
     login: '../js/login',
     teacherList: '../js/teacher-list'
@@ -19,6 +21,9 @@ require.config({
     },
      language: {
       deps: ['jquery','datepicker']
+    },
+    validate: {
+      deps :['jquery']
     }
   }
 });

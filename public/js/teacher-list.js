@@ -9,6 +9,7 @@ define(['jquery', 'template','bootstrap'], function ($, template) {
       $("#teacherInfo").html(html);
       //启用与注销
       $('.control').click(function () {
+        //.closest('父元素') 也可以选择父元素
         //！！！ var dataId= $('.control').parent('td')  这样获取的都是同一个dataId
         var dataId = $(this).parent('td').attr('data-id');
         var dataStatus = $(this).attr('data-status');
