@@ -1,10 +1,9 @@
-define(['jquery','template','uploadify'],function($,template) {
+define(['jquery','template','uploadify','region'],function($,template) {
 	$.ajax({
 		url: '/api/teacher/profile',
 		type: 'get',
 		dataType: 'JSON',
 		success : function (data){
-          if (data.code==200) {
           	var html = template('personalTpl',data.result);
           	$("#personalInfo").html(html);
           	//图像上传
@@ -20,8 +19,12 @@ define(['jquery','template','uploadify'],function($,template) {
                       var obj=JSON.parse(b);
                       $(".preview img").attr('src',obj.result.path);
                 }
-          	})
-          }
+          	});
+          	//三级联动
+          
+          	 $('#pcd').region({
+                url : '/public/assets/jquery-region/region.json'
+            });
 		}
 	});
 	
