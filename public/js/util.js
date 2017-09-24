@@ -13,7 +13,7 @@ define(['jquery'],function ($) {
            }
          });
        };
-       //返回 所需的id 值
+       //返回 所需的URl中的指定部分
        return tcId;
      },
      setSelect : function (path){

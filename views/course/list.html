@@ -73,7 +73,8 @@
       {{/if}}
     </div>
     <div class="info">
-      <a href="/course/base?cs_id={{$value.cs_id}}">{{$value.cs_name}}</a>
+      <!-- 添加一个参数flag用于在课程管理与课程添加之间切换-->
+      <a href="/course/base?flag=1&cs_id={{$value.cs_id}}">{{$value.cs_name}}</a>
       <ul class="list-unstyled">
         <li>
           <span>讲师：{{$value.tc_name}}</span>
