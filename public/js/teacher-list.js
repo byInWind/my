@@ -1,4 +1,7 @@
-define(['jquery', 'template','bootstrap'], function ($, template) {
+define(['jquery', 'template','util','bootstrap'], function ($, template,util) {
+  //设置左侧导航栏高亮选中
+  //注意util顺序它依赖jQuery，只能放在jQuery和jQuery插件后面，不能在bootstrap后面
+  util.setSelect(location.pathname);
   //讲师列表
   $.ajax({
     url: '/api/teacher',

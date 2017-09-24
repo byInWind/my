@@ -1,4 +1,4 @@
-define(['jquery','template','uploadify','region'],function($,template) {
+define(['jquery','template','uploadify','region','datepicker','language'],function($,template) {
 	$.ajax({
 		url: '/api/teacher/profile',
 		type: 'get',

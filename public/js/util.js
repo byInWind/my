@@ -15,6 +15,9 @@ define(['jquery'],function ($) {
        };
        //返回 所需的id 值
        return tcId;
+     },
+     setSelect : function (path){
+         $('.aside .navs a[href="'+path+'"]').addClass('active');
      }
    }
 })
