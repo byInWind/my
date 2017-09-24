@@ -44,18 +44,19 @@ define(['jquery','template','ckeditor','uploadify','region','datepicker','langua
                   CKEDITOR.instances[instance].updateElement();
                 }
               //提交表单
-                $(this).ajaxSubmit({
-                  url: '/api/teacher/modify',
-                  type: 'post',
-                  dataType: 'JSON',
-                  data: {tc_hometown :hometown},
-                  success : function (data){
-                     if(data.code == 200){
-                         // 刷新当前页面
-                      location.reload();
-              }
-                 }
-                })     
+              //   $(this).ajaxSubmit({
+              //     url: '/api/teacher/modify',
+              //     type: 'post',
+              //     dataType: 'JSON',
+              //     应该表单序列化，再加上hometown的值，不好做
+              //     data: {tc_hometown :hometown},
+              //     success : function (data){
+              //        if(data.code == 200){
+              //            // 刷新当前页面
+              //         location.reload();
+              // }
+              //    }
+              //   })     
            //直接ajax500
               //  $(this).ajaxSubmit({
               //     url: '/api/teacher/modify',

@@ -17,7 +17,7 @@ define(['jquery'],function ($) {
        return tcId;
      },
      setSelect : function (path){
-         $('.aside .navs a[href="'+path+'"]').addClass('active');
+         $('.aside .navs a[href="'+path+'"]').addClass('active').closest('ul').show();
      }
    }
 })
