@@ -1,5 +1,6 @@
-define(['jquery','template','uploadify','region','datepicker','language'],function($,template) {
-	$.ajax({
+define(['jquery','template','ckeditor','uploadify','region','datepicker','language'],function($,template,CKEDITOR) {
+	//ckeditor顺序。在第三个，参数里应该也排在第三，否则找不到
+  $.ajax({
 		url: '/api/teacher/profile',
 		type: 'get',
 		dataType: 'JSON',
@@ -25,6 +26,8 @@ define(['jquery','template','uploadify','region','datepicker','language'],functi
           	 $('#pcd').region({
                 url : '/public/assets/jquery-region/region.json'
             });
+             //富文本
+             CKEDITOR.replace('edit');
 		}
 	});
 	
