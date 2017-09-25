@@ -16,6 +16,7 @@ define(['jquery'],function ($) {
        //返回 所需的URl中的指定部分
        return tcId;
      },
+     //设置指定的对应地址显示
      setSelect : function (path){
          $('.aside .navs a[href="'+path+'"]').addClass('active').closest('ul').show();
      }

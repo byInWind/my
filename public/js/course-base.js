@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'util', 'validate','form'], function ($, template, util, validate) {
+define(['jquery', 'template','ckeditor', 'util', 'validate','form'], function($, template,CKEDITOR, util, validate) {
   // 设置侧边导航选中高亮
   util.setSelect('/course/add');
   var csId = util.all('cs_id');
@@ -16,8 +16,13 @@ define(['jquery', 'template', 'util', 'validate','form'], function ($, template,
       else {
         data.result.operate = '添加课程';
       }
+
+      ////添加富文本   这个位置不对，还没渲染出来就添加，报错。。。。。。
+      //CKEDITOR.replace('editor');
       var html = template('baseTpl', data.result);
       $("#baseInfo").html(html);
+      //添加富文本
+      CKEDITOR.replace('editor');
       //处理二级分类的下拉联动操作
       $("#firstType").change(function () {
         var cgId = $(this).val();
@@ -36,7 +41,7 @@ define(['jquery', 'template', 'util', 'validate','form'], function ($, template,
               '<option value="{{$value.cg_id}}">{{$value.cg_name}}</option> ' +
               '{{/each}}';
             var html = template.render(tpl, {list: data.result});
-            console.log(html)
+           // console.log(html)
             $("#secondType").html(html);
           }
         });
@@ -54,8 +59,8 @@ define(['jquery', 'template', 'util', 'validate','form'], function ($, template,
             dataType: 'json',
             data: $("#baseForm").serialize(),
             success: function (data) {
-              console.log($("#baseForm").serialize());
-              console.log(data.result)   //这里tc_id为空？？通过表单序列化 获取数据，需要name，也需要value值，不然，最终data可以获取到，但是没有value对应的值为空，如果使用下面的插件就没问题
+              //console.log($("#baseForm").serialize());
+              //console.log(data.result)   //这里tc_id为空？？通过表单序列化 获取数据，需要name，也需要value值，不然，最终data可以获取到，但是没有value对应的值为空，如果使用下面的插件就没问题
               //跳到添加/编辑课程封面 该界面需要cs_id
               location.href='/course/picture?cs_id='+data.result.cs_id;
             }
