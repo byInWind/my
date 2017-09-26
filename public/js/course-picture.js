@@ -27,9 +27,11 @@ define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form'], function ($
         fileObjName: 'cs_cover_original',
         //额外传递的参数
         formData: {cs_id: csId},
-        onUploadSuccess: function (a, b, c) {
+        onUploadSuccess: function (a, b) {
           var obj = JSON.parse(b);
           $('.preview img').attr('src', obj.result.path);
+          cropImg();
+          $("#cropBtn").text('保存图片').attr('data-flag', true)
         }
       });
 
@@ -47,7 +49,7 @@ define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form'], function ($
             dataType: 'json',
             success: function (data) {
               if (data.code == 200) {
-                location.href = '/course/lesson?cs_id='+data.result.cs_id;
+                location.href = '/course/lesson?cs_id=' + data.result.cs_id;
               }
             }
           })
