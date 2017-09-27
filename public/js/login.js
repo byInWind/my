@@ -10,7 +10,7 @@ define(['jquery','cookie'], function ($) {
       success: function (data) {
         if (data.code == 200) {
 
-          //记录用户信息,转换成json格式
+          //记录用户信息,转换成字符串格式   实现信息共享，记录主页头像与用户名
           $.cookie('loginInfo', JSON.stringify(data.result), {path: '/'});
           //console.log($.cookie().loginInfo)
           //return false;
@@ -19,6 +19,7 @@ define(['jquery','cookie'], function ($) {
         };
       }
     });
+    //阻止不输入密码默认提交
     return false;
   });
 })
