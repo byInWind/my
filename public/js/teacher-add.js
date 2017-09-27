@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'util','datepicker','language','form','validate'], function ($, template, util) {
+define(['jquery', 'template', 'util','datepicker','language','form','validate','state'], function ($, template, util) {
   
   //获取URL中的id
   var tcId = util.all('tc_id');

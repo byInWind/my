@@ -1,4 +1,4 @@
-define(['jquery', 'template','ckeditor', 'util', 'validate','form'], function($, template,CKEDITOR, util, validate) {
+define(['jquery', 'template','ckeditor', 'util', 'validate','form','state'], function($, template,CKEDITOR, util, validate) {
   // 设置侧边导航选中高亮
   util.setSelect('/course/add');
   var csId = util.all('cs_id');

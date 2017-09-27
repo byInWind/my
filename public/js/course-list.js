@@ -1,4 +1,4 @@
-define(['jquery','util','template'],function ($,util,template) {
+define(['jquery','util','template','state'],function ($,util,template) {
 //设置左侧导航栏高亮选中
   util.setSelect(location.pathname);
   $.ajax({

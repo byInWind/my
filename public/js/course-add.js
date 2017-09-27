@@ -1,5 +1,5 @@
-define(['jquery', 'util', 'form'], function ($, util) {
-//ÉèÖÃ×ó²àµ¼º½À¸¸ßÁÁÑ¡ÖÐ
+define(['jquery', 'util', 'form','state'], function ($, util) {
+//// è®¾ç½®ä¾§è¾¹å¯¼èˆªé€‰ä¸­é«˜äº®
   util.setSelect(location.pathname);
 
   $("#courseBtn").click(function () {
@@ -9,7 +9,7 @@ define(['jquery', 'util', 'form'], function ($, util) {
       dataType: 'JSON',
       success: function (data) {
         if (data.code == 200) {
-          // Ìø×ªÒ³Ãæ
+          // è·³è½¬
           location.href = '/course/base?cs_id=' + data.result.cs_id;
         }
       }

@@ -13,10 +13,10 @@ define(['jquery'],function ($) {
            }
          });
        };
-       //返回 所需的URl中的指定部分
+       //杩斿洖鎸囧畾鐨剈rl閮ㄥ垎
        return tcId;
      },
-     //设置指定的对应地址显示
+     //璁剧疆閫変腑瀵艰埅楂樹寒鏄剧ず
      setSelect : function (path){
          $('.aside .navs a[href="'+path+'"]').addClass('active').closest('ul').show();
      }

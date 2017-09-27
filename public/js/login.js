@@ -1,25 +1,25 @@
 define(['jquery','cookie'], function ($) {
-  //ÊµÏÖµÇÂ¼
+  //è¡¨å•æäº¤
   $('#loginBtn').click(function () {
     $.ajax({
       url: '/api/login',
       type: 'post',
       dataType: 'json',
-      // ±íµ¥ĞòÁĞ»¯£¬»ñÈ¡ËùÓĞ±íµ¥ÄÚÈİ
+      // è¡¨å•åºåˆ—åŒ–
       data: $("#loginForm").serialize(),
       success: function (data) {
         if (data.code == 200) {
 
-          //¼ÇÂ¼ÓÃ»§ĞÅÏ¢,×ª»»³É×Ö·û´®¸ñÊ½   ÊµÏÖĞÅÏ¢¹²Ïí£¬¼ÇÂ¼Ö÷Ò³Í·ÏñÓëÓÃ»§Ãû
+          //è®°å½•ç”¨æˆ·ä¿¡æ¯  å®ç°ä¿¡æ¯å…±äº«ï¼Œåå°è¿”å›äº†å¤´åƒä¸ç”¨æˆ·å
           $.cookie('loginInfo', JSON.stringify(data.result), {path: '/'});
           //console.log($.cookie().loginInfo)
           //return false;
-          // Ìø×ªµ½Ö÷Ò³
+          // è·³è½¬åˆ°ä¸»é¡µ
           location.href = '/main/index'
         };
       }
     });
-    //×èÖ¹²»ÊäÈëÃÜÂëÄ¬ÈÏÌá½»
+    //æ”¾æ­¢ä¸ç™»å½•ç›´æ¥æäº¤
     return false;
   });
 })

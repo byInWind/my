@@ -13,6 +13,7 @@ require.config({
     region : 'jquery-region/jquery.region',
     //不依赖jQuery，不是标准模块
     ckeditor : 'ckeditor/ckeditor',
+    echarts : 'echarts/echarts.min',
     //不是标准模块
     jcrop :'jcrop/js/Jcrop',
     util: '../js/util',
@@ -26,7 +27,8 @@ require.config({
     courseadd : '../js/course-add',
     coursebase : '../js/course-base',
     coursepicture :'../js/course-picture',
-    courselesson :'../js/course-lesson'
+    courselesson :'../js/course-lesson',
+    state :'../js/state'
   },
   shim: {
     bootstrap: {

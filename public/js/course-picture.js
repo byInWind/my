@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form'], function ($, template, util, uploadify) {
+define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form','state'], function ($, template, util, uploadify) {
   //设置默认选中的导航
   util.setSelect('/course/add');
 
