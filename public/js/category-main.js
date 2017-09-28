@@ -6,6 +6,7 @@ define(['jquery', 'util', 'template','state'], function ($, util, template) {
   $.ajax({
     url: '/api/category',
     type: 'get',
+    dataType:'json',
     success: function (data) {
       if(data.code == 200) {
         // 模板引擎

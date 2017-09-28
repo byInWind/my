@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>后台管理系统</title>
-          <?php include('./views/common/style.html'); ?>
+  <meta charset="UTF-8">
+  <title>后台管理系统</title>
+  <?php include('./views/common/style.html'); ?>
 </head>
 <body>
-    
-    <!-- 侧边栏 -->
-            <?php include('./views/common/aside.html'); ?>
-    <!-- 主体 -->
-    <div class="main">
-        <div class="container-fluid">
-            <!-- 头部 -->
-                    <?php include('./views/common/header.html'); ?>
-            <div class="body course-category">
-                <!-- 面包屑 -->
-                <ol class="breadcrumb">
-                    <li><a href="javascript:;">课程管理</a></li>
-                    <li class="active">课程分类</li>
-                </ol>
-                <div class="category-add">
-                    <form action="" class="form-horizontal">
-                        <div class="form-group">
-                            <label for="" class="col-xs-4 control-label">名称</label>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control input-sm" placeholder="填写分类名称">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="col-xs-4 control-label">级别</label>
-                            <div class="col-xs-2">
-                                <select name="" class="form-control input-sm">
-                                    <option value="">顶级分类</option>
-                                    <option value="">前端开发</option>
-                                    <option value="">后端开发</option>
-                                    <option value="">数据库</option>
-                                    <option value="">云计算&大数据</option>
-                                    <option value="">视觉设计</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="col-xs-4 control-label">排序</label>
-                            <div class="col-xs-1">
-                                <input type="text" class="form-control input-sm" value="10">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="col-xs-4 control-label">是否显示</label>
-                            <div class="col-xs-3">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" checked> 是
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox"> 否
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-8">
-                                <a href="./course_category.html" class="btn btn-success btn-sm pull-right">保存</a>
-                            </div>                          
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
-     <?php include('./views/common/script.html'); ?>
-    <script>
-          require(['categoryadd'])
-    </script>
+<!-- 侧边栏 -->
+<?php include('./views/common/aside.html'); ?>
+<!-- 主体 -->
+<div class="main">
+  <div class="container-fluid">
+    <!-- 头部 -->
+    <?php include('./views/common/header.html'); ?>
+    <div class="body course-category" id="addInfo">
+      <!-- 模板渲染 -->
+    </div>
+  </div>
+</div>
+<script type="text/template" id="addTpl">
+  <ol class="breadcrumb">
+    <li><a href="javascript:;">课程管理</a></li>
+    <li class="active">{{operate}}</li>
+  </ol>
+  <div class="category-add">
+    <form id="editForm" class="form-horizontal">
+      <div class="form-group">
+        <label for="" class="col-xs-4 control-label">名称</label>
+
+        <div class="col-xs-3">
+          <input name="cg_name" value="{{cg_name}}" type="text" class="form-control input-sm" placeholder="填写分类名称">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-xs-4 control-label">级别</label>
+
+        <div class="col-xs-2">
+          <select name="cg_pid" class="form-control input-sm" id="optons">
+            {{if top}}
+            {{each top}}
+            <option {{if cg_pid==$value.cg_id}}selected{{/if}}>{{$value.cg_name}}</option>
+            {{/each}}
+            {{/if}}
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-4 control-label">排序</label>
+
+        <div class="col-xs-1">
+          <input name="cg_order" type="text" class="form-control input-sm" value="10">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-xs-4 control-label">是否显示</label>
+
+        <div class="col-xs-3">
+          <label class="checkbox-inline">
+            <input name="cg_is_hide" type="checkbox" checked> 是
+          </label>
+          <label class="checkbox-inline">
+            <input name="cg_is_hide" type="checkbox"> 否
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-8">
+          <input type="submit" value="保存" class="btn btn-success btn-sm pull-right"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</script>
+<?php include('./views/common/script.html'); ?>
+<script>
+  require(['categoryadd'])
+</script>
 </body>
 </html>

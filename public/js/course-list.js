@@ -6,6 +6,7 @@ define(['jquery','util','template','state'],function ($,util,template) {
   	type: 'GET',
   	dataType: 'json',
     success : function (data){
+      console.log(data)
     	var html=template('courseList',{list : data.result});
         $("#courseInfo").html(html);
     }
