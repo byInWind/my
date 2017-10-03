@@ -29,7 +29,7 @@ require.config({
     coursebase: '../js/course-base',
     coursepicture: '../js/course-picture',
     courselesson: '../js/course-lesson',
-    categorymain: '../js/category-main',
+    categorylist: '../js/category-list',
     categoryadd: '../js/category-add'
   },
   shim: {

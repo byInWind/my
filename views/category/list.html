@@ -57,14 +57,14 @@
   {{ /if }}
   <td>10</td>
   <td>
-    <a href="/category/add?cg_id={{$value.cg_id}}" class="btn btn-info btn-xs" id="editBtn">编辑</a>
+    <a {{ if $value.cg_pid == 0 }}disabled {{ /if }} href="/category/add?cg_id={{$value.cg_id}}" class="btn btn-info btn-xs" id="editBtn">编辑</a>
   </td>
   </tr>
   {{/each}}
 </script>
 <?php include('./views/common/script.html'); ?>
 <script>
-  require(['categorymain'])
+  require(['categorylist'])
 </script>
 </body>
 </html>

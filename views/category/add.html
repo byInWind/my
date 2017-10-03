@@ -22,7 +22,11 @@
 <script type="text/template" id="addTpl">
   <ol class="breadcrumb">
     <li><a href="javascript:;">课程管理</a></li>
+    {{if top}}
+    <li class="active">添加分类</li>
+    {{else}}
     <li class="active">{{operate}}</li>
+    {{/if}}
   </ol>
   <div class="category-add">
     <form id="editForm" class="form-horizontal">
@@ -40,17 +44,17 @@
           <select name="cg_pid" class="form-control input-sm" id="optons">
             {{if top}}
             {{each top}}
-            <option {{if cg_pid==$value.cg_id}}selected{{/if}}>{{$value.cg_name}}</option>
+            <option value="{{$value.cg_id}}" {{if cg_pid==$value.cg_id}}selected{{/if}}>{{$value.cg_name}}</option>
             {{/each}}
             {{/if}}
           </select>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-xs-4 control-label">排序</label>
+        <label class="col-xs-4 control-label">课程数量</label>
 
         <div class="col-xs-1">
-          <input name="cg_order" type="text" class="form-control input-sm" value="10">
+          <input name="cg_order" type="text" class="form-control input-sm" value="{{cg_order}}">
         </div>
       </div>
       <div class="form-group">
@@ -58,10 +62,10 @@
 
         <div class="col-xs-3">
           <label class="checkbox-inline">
-            <input name="cg_is_hide" type="checkbox" checked> 是
+            <input name="cg_is_hide" type="radio" {{if cg_is_hide==0}} checked{{/if}}> 是
           </label>
           <label class="checkbox-inline">
-            <input name="cg_is_hide" type="checkbox"> 否
+            <input name="cg_is_hide" type="radio" {{if cg_is_hide==1}} checked{{/if}}> 否
           </label>
         </div>
       </div>
