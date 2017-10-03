@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'util', 'bootstrap', 'form','state'], function ($, template, util) {
+define(['jquery', 'template', 'util', 'bootstrap', 'form'], function ($, template, util) {
 
   //设置导航高亮
   util.setSelect('/course/add');

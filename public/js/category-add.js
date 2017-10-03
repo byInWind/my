@@ -1,4 +1,4 @@
-define(['jquery', 'util', 'template', 'form', 'validate', 'state'], function ($, util, template) {
+define(['jquery', 'util', 'template', 'form', 'validate'], function ($, util, template) {
   // 设置导航栏高亮选中
   util.setSelect('/category/list');
   var cgId = util.all('cg_id');

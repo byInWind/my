@@ -16,7 +16,6 @@ require.config({
     echarts: 'echarts/echarts.min',
     //不是标准模块
     jcrop: 'jcrop/js/Jcrop',
-    state: '../js/state',
     util: '../js/util',
     settings: '../js/settings',
     teacheradd: '../js/teacher-add',
@@ -30,7 +29,8 @@ require.config({
     coursepicture: '../js/course-picture',
     courselesson: '../js/course-lesson',
     categorylist: '../js/category-list',
-    categoryadd: '../js/category-add'
+    categoryadd: '../js/category-add',
+    repass: '../js/repass'
   },
   shim: {
     bootstrap: {

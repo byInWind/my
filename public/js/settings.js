@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'ckeditor', 'uploadify', 'region', 'datepicker', 'language', 'validate', 'form','state'], function ($, template, CKEDITOR) {
+define(['jquery', 'template', 'ckeditor', 'uploadify', 'region', 'datepicker', 'language', 'validate', 'form'], function ($, template, CKEDITOR) {
   //ckeditor顺序。在第三个，参数里应该也排在第三，否则找不到
   $.ajax({
     url: '/api/teacher/profile',

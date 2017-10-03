@@ -1,4 +1,4 @@
-define(['jquery', 'template','util','bootstrap','state'], function ($, template,util) {
+define(['jquery', 'template','util','bootstrap'], function ($, template,util) {
   //设置左侧导航栏高亮选中
   //注意util顺序,不能在bootstrap后面,util在第三个，参数里也应该排第三个
   util.setSelect(location.pathname);

@@ -1,4 +1,4 @@
-define(['jquery', 'util', 'template','state'], function ($, util, template) {
+define(['jquery', 'util', 'template'], function ($, util, template) {
   // 设置导航
   util.setSelect(location.pathname);
 
