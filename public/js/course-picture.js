@@ -1,4 +1,4 @@
-define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form','state'], function ($, template, util, uploadify) {
+define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form','state'], function ($, template, util) {
   //设置默认选中的导航
   util.setSelect('/course/add');
 
@@ -61,13 +61,14 @@ define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form','state'], fun
         }
       });
       //封装一个独立方法实现图片裁切
+      var  jcrop_api = null;;// 保证裁切实例的唯一性
       function cropImg() {
+        if(jcrop_api) jcrop_api.destroy();
         img.Jcrop({
           aspectRatio: 2//(拖拽时的比例)
         }, function () {
-          //启用缩略图预览
-          //先清空里面的内容
-          $('.thumb').html('');
+          //启用缩略图预览       
+          jcrop_api = this;
           this.initComponent('Thumbnailer', {width: 240, height: 120, mythumb: '.thumb'});
           //获取图片宽高
           var width = this.ui.stage.width;

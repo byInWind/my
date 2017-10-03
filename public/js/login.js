@@ -19,7 +19,7 @@ define(['jquery','cookie'], function ($) {
         };
       }
     });
-    //放止不登录直接提交
+    //防止不登录直接提交
     return false;
   });
 })

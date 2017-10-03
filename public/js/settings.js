@@ -13,7 +13,9 @@ define(['jquery', 'template', 'ckeditor', 'uploadify', 'region', 'datepicker', '
         width: 120,
         height: 120,
         buttonText: '',
+        //接口地址
         uploader: '/api/uploader/avatar',
+        //请求参数tc_avatar
         fileObjName: 'tc_avatar',
         itemTemplate: '<span></span>',
         onUploadSuccess: function (a, b) {

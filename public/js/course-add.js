@@ -13,11 +13,16 @@ define(['jquery', 'util', 'form','state'], function ($, util) {
           location.href = '/course/base?cs_id=' + data.result.cs_id;
         }
       }
-    })
+    }),
+    description: {
+      cs_name: {
+        required: "课程不能为空"
+      }
+    }
     //   $.ajax({
     //     url: '/api/course/create',
     //     type: 'post',
-    //     data : {cs_name : $('#aaa').val()},
+    //     data : {cs_name : $('#btn').val()},
     //     dataType: 'json',
     //     success : function (data){
     // location.href='/course/base';
