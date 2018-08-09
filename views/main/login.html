@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>后台管理系统</title>
-  <?php include('./views/common/style.html'); ?>
+    <link rel="import" href="/my/views/common/style.html">
 </head>
 <body>
 <!-- 登录 -->
 <div class="login">
   <div class="login-wrap">
     <div class="avatar">
-      <img src="../uploads/monkey.png" class="img-circle" alt="">
+      <img src="../../uploads/monkey.png" class="img-circle" alt="">
     </div>
     <form id="loginForm" class="col-xs-offset-1 col-xs-10">
       <div class="input-group input-group-lg">
@@ -29,7 +29,7 @@
     </form>
   </div>
 </div>
-<?php include('./views/common/script.html'); ?>
+<link rel="import" href="/my/views/common/script.html">
 <script>
   require(['login']);
 </script>

@@ -23,15 +23,15 @@ define(['jquery', 'template', 'cookie'], function ($,template) {
       type: 'post',
       dataType: 'json',
       success: function () {
-        location.href = '/main/login'
+        location.href = '/my/views/main/login.html'
       }
     });
   });
 // 验证用户是否登陆了
   var flag = $.cookie('PHPSESSID');
   //location.pathname 地址，防止不断跳转
-  if (!flag && location.pathname!='/main/login') {
-    location.href = '/main/login';
+  if (!flag && location.pathname!='/my/views/main/login.html') {
+    location.href = './login.html';
   }
 // 填充头像信息
   var loginInfo = $.cookie('loginInfo');

@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>后台管理系统</title>
-  <?php include('./views/common/style.html'); ?>
+    <link rel="import" href="/my/views/common/style.html">
 </head>
 <body>
     
     <!-- 侧边栏 -->
-    <?php include('./views/common/aside.html'); ?>
+    <link rel="import" href="/my/views/common/aside.html">
     <!-- 主体 -->
     <div class="main">
         <div class="container-fluid">
             <!-- 头部 -->
-            <?php include('./views/common/header.html'); ?>
+            <link rel="import" href="/my/views/common/header.html">
 
             <!-- 修改密码 -->
             <div class="body">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <?php include('./views/common/script.html'); ?>
+    <link rel="import" href="/my/views/common/script.html">
     <script>
         require(['repass'])
     </script>
