@@ -16,7 +16,7 @@ require.config({
         echarts: 'public/assets/echarts/echarts.min',
         //不是标准模块
         jcrop: 'public/assets/jcrop/js/Jcrop',
-        mock: 'public/assets/mock/mock.min',
+        mock: 'public/assets/mock/mock-min',
         util: 'public/js/util',
         settings: 'public/js/settings',
         teacheradd: 'public/js/teacher-add',
