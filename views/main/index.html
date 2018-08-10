@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <title>后台管理系统</title>
   <link rel="import" href="/my/views/common/style.html">
+  <link id="common" rel="import" href="/my/views/common/common.html">
 </head>
 <body>
-
+<div id="aside"></div>
 <!-- 侧边栏 -->
-<link rel="import" href="/my/views/common/aside.html">
 <!-- 主体 -->
 <div class="main">
   <div class="container-fluid">
     <!-- 头部 -->
-    <link rel="import" href="/my/views/common/header.html">
+    <div id="header"></div>
     <!-- 个人资料 -->
     <div class="body teacher-profile">
       <div class="profile">
@@ -54,7 +54,12 @@
     </div>
   </div>
 </div>
-<link rel="import" href="/my/views/common/script.html">
+<script src="../../public/assets/require/require.js"></script>
+<script src="../../public/js/config.js"></script>
+<script>
+    require(['common']);
+</script>
+<!--<link rel="import" href="/my/views/common/script.html">-->
  <script>
    require(['index'])
  </script>
